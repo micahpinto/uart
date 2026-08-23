@@ -5,11 +5,16 @@ Full-duplex UART communication at 9600 baud. TX continuously transmits an 8-bit 
 # uart tx
 Continuously sends data, here an example- 0xE2 (11100010) over the TX line after reset is released, allowing verification of baud rate accuracy and frame structure on real hardware.
 ## Specification
-**Hardware:** Arty S7-25 (Xilinx Artix-7)  
+**Hardware:** Arty S7-25 (Xilinx Artix-7) 
+
 **Clock:** 100 MHz (onboard oscillator) 
+
 **Baud Rate:** 9600 bps and **Each Bit=** 10,417 clock cycles
-**Frame:** 1 start bit + 8 data bits (LSB first) + 1 stop bit  
+
+**Frame:** 1 start bit + 8 data bits (LSB first) + 1 stop bit 
+
 [START(0)] [D0 D1 D2 D3 D4 D5 D6 D7] [STOP(1)] 
+
 **Output:** Serial TX line (R12 to USB-to-UART converter)
 
 ## Design
