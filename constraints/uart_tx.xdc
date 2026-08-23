@@ -1,5 +1,3 @@
-# uart_tx module implementation
-
 # System Clock - 100 MHz
 # Located at R2 on Arty S7-25 board
 set_property -dict { PACKAGE_PIN R2 IOSTANDARD SSTL135 } [get_ports clk]
