@@ -1,0 +1,76 @@
+========================================
+     UART TX TESTBENCH - SIMULATION
+========================================
+Test Configuration:
+  Test Data:       0xe2 (binary: 11100010)
+  Baud Rate:              9600 bps
+  Clock Freq:              100 MHz
+  Clocks per bit:        10416
+  Bit Period:      104.17 µs
+  Frames to send:  3
+========================================
+
+Reset released at time 100 ns
+Bit  | Time (µs)| RX Val| Expected | Status
+-------------------------------------------
+ 0   |   53.183 |   0   | START(0) | PASS 
+ 1   |  157.349 |   0   | D0(0)    | PASS 
+ 2   |  261.515 |   1   | D1(1)    | PASS 
+ 3   |  365.681 |   0   | D2(0)    | PASS 
+ 4   |  469.847 |   0   | D3(0)    | PASS 
+ 5   |  574.013 |   0   | D4(0)    | PASS 
+ 6   |  678.179 |   1   | D5(1)    | PASS 
+ 7   |  782.345 |   1   | D6(1)    | PASS 
+ 8   |  886.511 |   1   | D7(1)    | PASS 
+ 9   |  990.677 |   1   | STOP(1)  | PASS 
+ 10  | 1094.843 |   0   | START(0) | PASS 
+ 11  | 1199.009 |   0   | D0(0)    | PASS 
+ 12  | 1303.175 |   1   | D1(1)    | PASS 
+ 13  | 1407.341 |   0   | D2(0)    | PASS 
+ 14  | 1511.507 |   0   | D3(0)    | PASS 
+ 15  | 1615.673 |   0   | D4(0)    | PASS 
+ 16  | 1719.839 |   1   | D5(1)    | PASS 
+ 17  | 1824.005 |   1   | D6(1)    | PASS 
+ 18  | 1928.171 |   1   | D7(1)    | PASS 
+ 19  | 2032.337 |   1   | STOP(1)  | PASS 
+ 20  | 2136.503 |   0   | START(0) | PASS 
+ 21  | 2240.669 |   0   | D0(0)    | PASS 
+ 22  | 2344.835 |   1   | D1(1)    | PASS 
+ 23  | 2449.001 |   0   | D2(0)    | PASS 
+ 24  | 2553.167 |   0   | D3(0)    | PASS 
+ 25  | 2657.333 |   0   | D4(0)    | PASS 
+ 26  | 2761.499 |   1   | D5(1)    | PASS 
+ 27  | 2865.665 |   1   | D6(1)    | PASS 
+ 28  | 2969.831 |   1   | D7(1)    | PASS 
+ 29  | 3073.997 |   1   | STOP(1)  | PASS 
+
+
+TRANSMISSION RESULTS SUMMARY:
+
+
+Frame Analysis:
+
+--- Frame           1 ---
+START bit: OK (0)
+DATA bits: OK (0xe2 = 11100010)
+STOP bit: OK (1)
+
+--- Frame           2 ---
+START bit: OK (0)
+DATA bits: OK (0xe2 = 11100010)
+STOP bit: OK (1)
+
+--- Frame           3 ---
+START bit: OK (0)
+DATA bits: OK (0xe2 = 11100010)
+STOP bit: OK (1)
+
+Total bits transmitted: 30 (10 bits × 3 frames)
+Bits passed:30
+Bits failed:0
+
+TEST PASSED All 3 frames transmitted correctly.
+========================================
+    SIMULATION COMPLETED
+========================================
+testbench.sv:62: $finish called at 3447578000 (1ps)
