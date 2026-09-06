@@ -1,7 +1,7 @@
 # uart
 A complete UART transmitter and receiver module for the Arty S7-25 FPGA board.
 Full-duplex UART communication at 9600 baud. TX continuously transmits an 8-bit frame. RX receives frames and outputs the reconstructed byte.
-## Specification
+**Specification**
 **Hardware:** Arty S7-25 (Xilinx Artix-7) 
 **Clock:** 100 MHz (onboard oscillator) 
 
