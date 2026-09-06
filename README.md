@@ -1,15 +1,14 @@
 # uart
 A complete UART transmitter and receiver module for the Arty S7-25 FPGA board.
 Full-duplex UART communication at 9600 baud. TX continuously transmits an 8-bit frame. RX receives frames and outputs the reconstructed byte.
+## Specification
+**Hardware:** Arty S7-25 (Xilinx Artix-7) 
+**Clock:** 100 MHz (onboard oscillator) 
 
 # uart tx
 Continuously sends data, here an example- 0xE2 (11100010) over the TX line after reset is released, allowing verification of baud rate accuracy and frame structure on real hardware.
-## Specification
-**Hardware:** Arty S7-25 (Xilinx Artix-7) 
 
-**Clock:** 100 MHz (onboard oscillator) 
-
-**Baud Rate:** 9600 bps and **Each Bit=** 10,417 clock cycles
+**Baud Rate:** 9600 bps (configurable) and **Each Bit=** 10,417 clock cycles
 
 **Frame:** 1 start bit + 8 data bits (LSB first) + 1 stop bit 
 
@@ -43,3 +42,19 @@ Programmed on the Arty S7-25 and verified using RealTerm serial terminal:
 - Opened RealTerm at COM4, 9600 baud, Hex display
 - Observed repeated `E2 E2 E2 E2 ...` on screen (0xE2 is the transmitted byte)
 This confirms correct baud rate, frame structure, and timing on real hardware.
+
+# uart rx
+The input rx is synchronized using two flip-flops to prevent metastability: This adds a 2-clock latency but ensures clean, glitch-free sampling.
+### Simulation Results 
+
+The design has been verified through comprehensive bit-by-bit testing. Three consecutive frames of test data (0xCC = 11001100) were transmitted and received.
+
+
+
+
+
+
+
+
+
+
